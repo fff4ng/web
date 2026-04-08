@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>旅人日常 | 亞洲地區</title>
+</head>
+
+<body>
+     padding-top: 60px;
+    <div class="navbar">
+      <a href="index.html" class="logo">
+            <div class="title-section">
+            <h1 class="fi">旅人日常</h1>
+            <img src="images/1.avif" alt="旅人日常" class="title-img">
+            </div>
+        </a>
+        <ul class="menu">
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="asian.html">亞洲地區</a></li>
+            <li><a href="europe.html">歐洲地區</a></li>
+            <li><a href="us.html">美洲地區</a></li>
+            <li><a href="africa.html">非洲地區</a></li>
+            <li><a href="aboutus.html">關於我們</a></li>
+        </ul>
+    </div>
+
+
+    <div class="fi2">
+    <h1 class="fi3">亞洲景點</h1>
+    <div class="search-box"> 
+    <h2>搜尋旅遊行程</h2>
+
+    <form id="searchForm" class="search-form">
+        <div class="form-group">
+            <label>出發地</label>
+            <input type="text" id="fromInput" placeholder="例如：台北">
+        </div>
+
+        <div class="form-group">
+            <label>目的地</label>
+            <input type="text" id="toInput" placeholder="例如：日本、韓國">
+        </div>
+
+        <div class="form-group">
+            <label>出發日期</label>
+            <input type="date" id="startDate">
+        </div>
+
+        <div class="form-group">
+            <label>回程日期</label>
+            <input type="date" id="endDate">
+        </div>
+
+        <button type="submit">搜尋</button>
+    </form>
+    </div> 
+
+    <div class="trip-section">
+        <div class="trip-card" data-from="台北" data-to="日本" data-start="2026-04-01" data-end="2026-04-13">
+        <img src="images/2.jpg" alt="日本">
+        <h3>日本東京五日遊</h3>
+        <p>賞櫻＋富士山＋購物</p>
+        <h3>$61,900起</h3>
+        <a href="as1.html">查看行程</a>
+        </div>
+
+    
+        <div class="trip-card" data-from="台北" data-to="韓國" data-start="2026-04-01" data-end="2026-04-13">
+            <img src="images/8.jpg" alt="韓國">
+            <h3>韓國首爾四日遊</h3>
+            <p>韓劇景點＋美妝購物</p>
+            <h3>$31,000起</h3>
+            <a href="as2.html">查看行程</a>
+        </div>
+
+    
+        <div class="trip-card" data-from="台北" data-to="泰國" data-start="2026-04-01" data-end="2026-04-13">
+            <img src="images/9.jpg" alt="泰國">
+            <h3>泰國曼谷五日遊</h3>
+            <p>水上市場＋按摩放鬆</p>
+            <h3>$33,800起</h3>
+            <a href="as3.html">查看行程</a>
+        </div>
+    
+        <div class="trip-card" data-from="台北" data-to="日本" data-start="2026-04-01" data-end="2026-04-13">
+            <img src="images/10.jpg" alt="北海道">
+            <h3>超值日本北海道</h3>
+            <p>旭山雪之村＋企鵝遊行</p>
+            <h3>$28,900起</h3>
+            <a href="as4.html">查看行程</a>
+        </div>
+
+    
+        <div class="trip-card" data-from="台北" data-to="馬來西亞" data-start="2026-04-01" data-end="2026-04-13">
+            <img src="images/11.jpg" alt="馬來西亞">
+            <h3>馬來西亞五日遊</h3>
+            <p>深入原始雨林+世界遺產城市</p>
+            <h3>$31,900起</h3>
+            <a href="as5.html">查看行程</a>
+        </div>
+
+    
+        <div class="trip-card" data-from="台北" data-to="以色列" data-start="2026-04-01" data-end="2026-04-13">
+            <img src="images/12.jpg" alt="以色列">
+            <h3>以色列十五日遊</h3>
+            <p>雙死海+完整佩特拉+耶路撒冷三連泊</p>
+            <h3>$242,000起</h3>
+            <a href="as6.html">查看行程</a>
+        </div>
+    </div>
+        
+</div>
+
+</body>
+<script>
+const form = document.getElementById("searchForm");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault(); // 防止表單自動刷新
+
+    const from = document.getElementById("fromInput").value.toLowerCase();
+    const to = document.getElementById("toInput").value.toLowerCase();
+    const start = document.getElementById("startDate").value;
+    const end = document.getElementById("endDate").value;
+
+    const trips = document.querySelectorAll(".trip-card");
+    trips.forEach(trip => {
+        const tripFrom = trip.dataset.from.toLowerCase();
+        const tripTo = trip.dataset.to.toLowerCase();
+        const tripStart = trip.dataset.start;
+        const tripEnd = trip.dataset.end;
+
+        let show = true;
+
+        if(from && !tripFrom.includes(from)) show = false;
+        if(to && !tripTo.includes(to)) show = false;
+        if(start && tripStart < start) show = false;
+        if(end && tripEnd > end) show = false;
+
+        trip.style.display = show ? "block" : "none";
+    });
+});
+</script>

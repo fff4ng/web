@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>旅人日常 | 美洲地區</title>
+</head>
+
+<body>
+     padding-top: 60px;
+    <div class="navbar">
+      <a href="index.html" class="logo">
+            <div class="title-section">
+            <h1 class="fi">旅人日常</h1>
+            <img src="images/1.avif" alt="旅人日常" class="title-img">
+            </div>
+        </a>
+        <ul class="menu">
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="asian.html">亞洲地區</a></li>
+            <li><a href="europe.html">歐洲地區</a></li>
+            <li><a href="us.html">美洲地區</a></li>
+            <li><a href="africa.html">非洲地區</a></li>
+            <li><a href="aboutus.html">關於我們</a></li>
+        </ul>
+    </div>
+
+
+    <div class="fi2">
+    <h1 class="fi3">美洲景點</h1>
+    <div class="search-box"> 
+    <h2>搜尋旅遊行程</h2>
+
+    <form id="searchForm" class="search-form">
+        <div class="form-group">
+            <label>出發地</label>
+            <input type="text" id="fromInput" placeholder="例如：台北">
+        </div>
+
+        <div class="form-group">
+            <label>目的地</label>
+            <input type="text" id="toInput" placeholder="例如：美國、加拿大">
+        </div>
+
+        <div class="form-group">
+            <label>出發日期</label>
+            <input type="date" id="startDate">
+        </div>
+
+        <div class="form-group">
+            <label>回程日期</label>
+            <input type="date" id="endDate">
+        </div>
+
+        <button type="submit">搜尋</button>
+    </form>
+    </div> 
+
+    
+    <div class="trip-section">
+        <div class="trip-card" data-from="台北" data-to="北部美國阿拉斯加" data-start="2026-04-01" data-end="2026-04-13">
+            <img src="images/19.jpg" alt="阿拉斯加">
+            <h3>阿拉斯加幸福極光金色大地之旅8日遊</h3>
+            <p>珍娜河遊船+珍娜溫泉一晚+阿拉斯加帝王蟹餐</p>
+            <h3>$116,900起</h3>
+            <a href="us1.html">查看行程</a>
+        </div>
+
+        <div class="trip-card" data-from="台北" data-to="美加族美西" data-start="2026-04-01" data-end="2026-04-13">
+            <img src="images/20.jpg" alt="美加族">
+            <h3>玩美加族～臥谷長榮奇幻美西9日遊</h3>
+            <p>布萊斯峽谷國家公園+佛雷斯諾+拉斯維加斯</p>
+            <h3>$95,900起</h3>
+            <a href="us2.html">查看行程</a>
+        </div>
+
+        <div class="trip-card" data-from="台北" data-to="美國德州" data-start="2026-04-01" data-end="2026-04-13">
+            <img src="images/21.jpg" alt="德州">
+            <h3>德州八日遊</h3>
+            <p>休士頓太空中心+達拉斯+牛仔城+總統圖書館+阿拉莫要塞</p>
+            <h3>$88,900起</h3>
+            <a href="us3.html">查看行程</a>
+        </div>
+    
+        <div class="trip-card" data-from="台北" data-to="美國西岸鳳凰城" data-start="2026-04-01" data-end="2026-04-13">
+            <img src="images/22.jpg" alt="鳳凰">
+            <h3>鳳凰傳說美西9日遊</h3>
+            <p>聖多納+布萊斯峽谷+大峽谷+羚羊峽谷</p>
+            <h3>$77,900起</h3>
+            <a href="us4.html">查看行程</a>
+        </div>
+
+        <div class="trip-card" data-from="台北" data-to="美國東部" data-start="2026-04-01" data-end="2026-04-13">
+            <img src="images/23.jpg" alt="美東">
+            <h3>美東精彩漫遊9日遊</h3>
+            <p>大西洋城+巴爾地摩+蘭卡斯特+費城+華盛頓</p>
+            <h3>$102,900起</h3>
+            <a href="us5.html">查看行程</a>
+        </div>
+
+        <div class="trip-card" data-from="台北" data-to="加拿大溫哥華" data-start="2026-04-01" data-end="2026-04-13">
+            <img src="images/24.jpg" alt="溫哥華">
+            <h3>溫哥華10日遊</h3>
+            <p>冬季西雅圖+洛磯三大國家公園+洛磯城堡一晚+硫磺山纜車</p>
+            <h3>$80,900起</h3>
+            <a href="us6.html">查看行程</a>
+        </div>
+    </div>
+        
+</div>
+</body>
+
+<script>
+const form = document.getElementById("searchForm");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault(); // 防止表單自動刷新
+
+    const from = document.getElementById("fromInput").value.toLowerCase();
+    const to = document.getElementById("toInput").value.toLowerCase();
+    const start = document.getElementById("startDate").value;
+    const end = document.getElementById("endDate").value;
+
+    const trips = document.querySelectorAll(".trip-card");
+    trips.forEach(trip => {
+        const tripFrom = trip.dataset.from.toLowerCase();
+        const tripTo = trip.dataset.to.toLowerCase();
+        const tripStart = trip.dataset.start;
+        const tripEnd = trip.dataset.end;
+
+        let show = true;
+
+        if(from && !tripFrom.includes(from)) show = false;
+        if(to && !tripTo.includes(to)) show = false;
+        if(start && tripStart < start) show = false;
+        if(end && tripEnd > end) show = false;
+
+        trip.style.display = show ? "block" : "none";
+    });
+});
+</script>

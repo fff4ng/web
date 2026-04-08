@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Traveler's daily life</title>
+</head>
+<script>
+function searchSpots() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const spots = document.querySelectorAll(".spot .text h2");
+
+    spots.forEach(spot => {
+        const spotDiv = spot.parentElement.parentElement; // 取得 .spot div
+        if (spot.textContent.toLowerCase().includes(input)) {
+            spotDiv.style.display = "flex"; // 顯示
+        } else {
+            spotDiv.style.display = "none"; // 隱藏
+        }
+    });
+
+    return false; // 避免表單刷新頁面
+}
+</script>
+<body>
+     padding-top: 60px;
+    <div class="navbar">
+        <a href="index.html" class="logo">
+            <div class="title-section">
+            <h1 class="fi">旅人日常</h1>
+            <img src="images/1.avif" alt="旅人日常" class="title-img">
+            </div>
+        </a>
+        <ul class="menu">
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="asian.html">亞洲地區</a></li>
+            <li><a href="europe.html">歐洲地區</a></li>
+            <li><a href="us.html">美洲地區</a></li>
+            <li><a href="africa.html">非洲地區</a></li>
+            <li><a href="aboutus.html">關於我們</a></li>
+        </ul>
+    </div>
+    <!-- <div class="fi2">
+    <h1 class="fi3">熱門景點</h1> -->
+    <div class="fi2">
+    <div class="spot-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+        <h1 class="fi3">熱門景點</h1>
+        <form id="searchForm" onsubmit="return searchSpots()" style="display:flex; gap:5px;">
+            <input type="text" id="searchInput" placeholder="搜尋景點..." style="padding:10px 15px; font-size:18px; width:250px; border-radius:8px; border:1px solid #ccc;">
+            <button type="submit" style="padding:10px 15px; font-size:18px; border-radius:8px; background-color:#f5f5f5; color:white; border:none; cursor:pointer;">🔍</button>
+        </form>
+    </div>
+
+    <div class="spot">
+        
+        <div class="text">
+            <a class="ind" href="as1.html">
+                <h2>富士山</h2>
+                <img src="images/2.jpg" alt="">
+                <h4>富士山是日本最具代表性的地標之一，也是世界文化遺產。標高3776公尺，四季皆展現不同風貌：春天櫻花相映、夏天適合登山、秋天楓葉環繞、冬天白雪覆蓋宛如仙境。</h4>
+                <h4>不論是遠觀拍照還是親自登頂，都能感受到大自然的壯麗與震撼。</h4>
+            </a>
+        </div>
+    </div>
+
+    <div class="spot">
+        <a class="ind" href="as4.html">
+            <div class="text">
+                <h2>北海道滑雪</h2>
+                <img src="images/3.jpg" alt="">
+                <h4>北海道以細緻柔軟的「粉雪」聞名全球，是滑雪愛好者的天堂。這裡擁有多個世界級滑雪場，如二世谷（Niseko）、旭山雪之村 (Asahiyama Snow Village)等，無論是初學者還是專業玩家都能找到適合的雪道。</h4>
+                <h4>除了滑雪，還可以體驗溫泉、美食與浪漫雪景，讓冬季旅程更加豐富難忘。</h4>
+
+            </div>
+        </a>
+    </div>
+
+    <div class="spot">
+        <a class="ind" href="eu2.html">
+            <div class="text">
+                <h2>冰島極光</h2>
+                <img src="images/14.jpg" alt="">
+                <h4>冰島是觀賞極光的最佳地點之一，每年冬季都有機會看到夢幻般的綠色光帶在夜空中舞動。遠離城市光害的環境，讓極光更加清晰壯觀。</h4>
+                <h4>除了極光，冰島還有火山、冰川、瀑布與黑沙灘等壯麗景觀，是結合自然奇觀與冒險體驗的理想旅遊地。</h4>
+            </div>
+        </a>
+    </div>
+
+    <div class="spot">
+        <a class="ind" href="eu3.html">
+            <div class="text">
+                <h2>荷蘭花季</h2>
+                <img src="images/15.jpg" alt="">
+                <h4>荷蘭花季（通常在 3月中旬至5月中旬）是全球最著名的春季盛事，以鬱金香為核心，特別是每年3月底至5月初開放的庫肯霍夫花園 (Keukenhof)，展示超過700萬株球莖花卉，展現萬紫千紅的壯觀花海。</h4>
+                <h4>建議在4月中旬前往，能看到盛開的花田，也是遊覽荷蘭的最佳時節。</h4>
+
+            </div>
+        </a>
+    </div>
+
+    <div class="spot">
+        <a class="ind" href="af1.html">
+            <div class="text">
+                <h2>埃及金字塔</h2>
+                <img src="images/25.jpg" alt="">
+                <h4>埃及吉薩人面獅身像（Great Sphinx of Giza）是世界上最古老、巨大的單體雕像之一，位於卡夫拉金字塔旁，長約73.5公尺、高約20公尺，由石灰岩雕刻而成。</h4>
+                <h4>一般認為其建造於公元前2500年左右的法老卡夫拉時期，象徵著法老神聖的智慧與力量，是金字塔群的守護者。</h4>
+
+            </div>
+        </a>
+    </div>
+
+    <div class="spot">
+        <a class="ind" href="us3.html">
+            <div class="text">
+                <h2>德州休士頓太空中心</h2>
+                <img src="images/21.jpg" alt="">
+                <h4>德州休士頓太空中心（Space Center Houston）是NASA約翰遜太空中心（Johnson Space Center）的官方遊客中心，是探索美國載人航太歷史的必訪景點。</h4>
+                <h4>該中心展示超過400件太空文物，包括阿波羅任務控制中心、土星五號火箭、太空梭複製品及真實月球岩石。</h4>
+
+            </div>
+        </a>
+    </div>
+
+</div>
+</body>
+</html>
+
+<script>
+        function filterSpots() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const spots = document.querySelectorAll('.spot');
+        spots.forEach(spot => {
+            const title = spot.querySelector('h2').innerText.toLowerCase();
+            if(title.includes(input)) {
+                spot.style.display = '';
+            } else {
+                spot.style.display = 'none';
+            }
+        });
+    }
+    </script>
