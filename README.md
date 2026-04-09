@@ -42,4 +42,4 @@ aboutus.html 關於我們
 
 歡迎點擊下方連結體驗「旅人日常」旅遊網站：
 
-🔗 [https://你的網址](https://fff4ng.github.io/web/)
+🔗 https://fff4ng.github.io/web/
